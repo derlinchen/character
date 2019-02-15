@@ -3,11 +3,13 @@ package character.part07;
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class StreamDemo {
 
 	public static void main(String[] args) {
+		// stream的用法必须为一个列表
 		List<String> strings = Arrays.asList("11","22","33","44");
 		// forEach用法
 		strings.stream().forEach(System.out::println);
@@ -38,6 +40,15 @@ public class StreamDemo {
 		System.out.println(stat.getMin());
 		System.out.println(stat.getSum());
 		System.out.println(stat.getAverage());
+		System.out.println(nums.stream().count());
+		
+		// math的用法
+		boolean ismath = strings.stream().anyMatch((s)->s.startsWith("11"));
+		System.out.println(ismath);
+		
+		// reduce用法
+		Optional<String> red = strings.stream().reduce((s1, s2)->s1 + "#" +s2);
+		red.ifPresent(System.out::println);
 	}
 
 }
