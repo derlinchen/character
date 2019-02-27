@@ -1,6 +1,6 @@
 package character.part04.inter;
 
-// ½Ó¿Ú£¬³ıÄ¬ÈÏ·½·¨Íâ£¬ÓĞÇÒÖ»ÓĞÒ»¸ö³éÏó·½·¨
+//æ¥å£ï¼Œé™¤é»˜è®¤æ–¹æ³•å¤–ï¼Œæœ‰ä¸”åªæœ‰ä¸€ä¸ªæŠ½è±¡æ–¹æ³•
 @FunctionalInterface
 public interface StartWith<F, T> {
 	T startswith(F from);

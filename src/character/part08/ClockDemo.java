@@ -9,30 +9,27 @@ import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 /**
- * ¹ØÓÚÈÕÆÚµÄÒ»Ğ©ĞÂÌØĞÔ
  * @author Derlin
  *
  */
 public class ClockDemo {
 	
 	public static void main(String[] args) {
-		// Clock¶ÔÊ§È¥Ãô¸Ğ
+		// Clockå¯¹æ—¶åŒºæ•æ„Ÿ
 		Clock clock = Clock.systemDefaultZone();
 		long millis = clock.millis();
 		Instant instant = clock.instant();
 		Date legacyDate = Date.from(instant);
 		System.out.println(millis);
 		System.out.println(legacyDate);
-		
-		// »ñÈ¡ËùÓĞÊ±Çø
+		// è·å–æ‰€æœ‰æ—¶åŒº
 		System.out.println(ZoneId.getAvailableZoneIds());
-		// »ñÈ¡ËùÊôÊ±Çø£¬ÉÏº£Îª¶«°ËÇø
+		// è·å–æ‰€å±æ—¶åŒºï¼Œä¸Šæµ·ä¸ºä¸œå…«åŒº
 		ZoneId shanghaizone = ZoneId.of("Asia/Shanghai");
 		ZoneId berlinzone = ZoneId.of("Europe/Berlin");
 		System.out.println(shanghaizone.getRules());
 		System.out.println(berlinzone.getRules());
-		
-		// ±¾µØÊ±¼ä£¬Ã»ÓĞÊ±ÇøĞÅÏ¢£¬ËùÒÔÉÏº£µÄÊ±¼äÒªÔÚ°ØÁÖµÄÊ±¼äºó
+		// æœ¬åœ°æ—¶é—´ï¼Œæ²¡æœ‰æ—¶åŒºä¿¡æ¯ï¼Œæ‰€ä»¥ä¸Šæµ·çš„æ—¶é—´è¦åœ¨æŸæ—çš„æ—¶é—´å
 		LocalTime shanghainow = LocalTime.now(shanghaizone);
 		LocalTime berlinnow = LocalTime.now(berlinzone);
 		System.out.println(shanghainow);
@@ -42,17 +39,11 @@ public class ClockDemo {
 		long minBetween = ChronoUnit.MINUTES.between(shanghainow, berlinnow);
 		System.out.println(hoursBetween);
 		System.out.println(minBetween);
-		
-		// ±¾µØÈÕÆÚ
+		// æœ¬åœ°æ—¥æœŸ
 		LocalDate today = LocalDate.now();
 		LocalDate tomorrow = today.plus(1, ChronoUnit.DAYS);
 		System.out.println(today);
 		System.out.println(tomorrow);
-		
-		
-		
-		
-		
 		
 	}
 	

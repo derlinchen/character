@@ -18,7 +18,7 @@ public class LambdaDemo {
 		
 		System.out.println(names);
 		
-		// lambda±í´ïÊ½
+		// lambdaè¡¨è¾¾å¼
 		Collections.sort(names, (String a, String b)->{ 
 			return a.compareTo(b);
 		});

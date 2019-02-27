@@ -5,17 +5,16 @@ import character.part03.inter.Converter;
 public class ScopeDemo {
 
 	public static void main(String[] args) {
-		// ·ÃÎÊÍâ²ã¾Ö²¿±äÁ¿
+		// è®¿é—®å¤–å±‚å±€éƒ¨å˜é‡
 		final int num = 1;
 		Converter<Integer, String> conv = (value)-> String.valueOf(value + num);
 		System.out.println(conv.convert(2));
 		
-		
-		// Ä¬ÈÏÊ¹ÓÃÁËfinal½øĞĞĞŞÊÎ
+		// é»˜è®¤ä½¿ç”¨äº†finalè¿›è¡Œä¿®é¥°
 		int count = 2;
 		Converter<Integer, String> convert = (value)->String.valueOf(value + count);
 		System.out.println(convert.convert(5));
-		// Ä¬ÈÏÊ¹ÓÃÁËfinalĞŞÊÎ£¬¹Ê²»¿É¶Ôcount½øĞĞĞŞ¸Ä
+		//å› ä¸ºcountçš„æ•°æ®ç±»å‹é»˜è®¤æ˜¯finalçš„ï¼Œæ‰€ä»¥ä¿®æ”¹å€¼ä¼šæŠ¥é”™
 		//count = 2;
 	}
 	

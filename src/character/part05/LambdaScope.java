@@ -4,7 +4,7 @@ import character.part05.inter.Converter;
 
 public class LambdaScope {
 	
-	// lambda内部对于实例的字段以及静态变量是即可读又可写
+	// lambda鍐呴儴瀵逛簬瀹炰緥鐨勫瓧娈典互鍙婇潤鎬佸彉閲忔槸鍗冲彲璇诲張鍙啓
 	
 	static int outerStaticNum;
 	

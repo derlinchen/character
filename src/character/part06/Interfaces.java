@@ -13,7 +13,7 @@ import character.part06.bean.Person;
 public class Interfaces {
 
 	public static void main(String[] args) {
-		// Predicate½Ó¿Ú£¬ÖµÓĞÒ»¸ö²ÎÊı£¬·µ»ØµÄÊÇ¸öbooleanÊı¾İ
+		// Predicateæ¥å£ï¼Œå€¼æœ‰ä¸€ä¸ªå‚æ•°ï¼Œè¿”å›çš„æ˜¯ä¸ªbooleanæ•°æ®
 		Predicate<String> pre = (s) -> s.length() > 0;
 		System.out.println(pre.test("ssss"));
 		System.out.println(pre.negate().test("ssss"));
@@ -23,7 +23,7 @@ public class Interfaces {
 		System.out.println(nonNull.test(true));
 		System.out.println(isNull.test(true));
 
-		// Function½Ó¿Ú£¬·ºĞÍÖĞµÚÒ»¸öÎª´«ÈëµÄÖµ£¬µÚ¶ş¸öÎª·µ»ØµÄÖµ
+		// Functionæ¥å£ï¼Œæ³›å‹ä¸­ç¬¬ä¸€ä¸ªä¸ºä¼ å…¥çš„å€¼ï¼Œç¬¬äºŒä¸ªä¸ºè¿”å›çš„å€¼
 		Function<String, Integer> toint = Integer::valueOf;
 		System.out.println(toint.apply("1111"));
 		Function<String, String> tostring = toint.andThen(String::valueOf);
@@ -31,27 +31,27 @@ public class Interfaces {
 		Function<Integer, String> int2string = String::valueOf;
 		System.out.println(int2string.apply(111));
 
-		// Supplier ½Ó¿Ú·µ»ØÈÎÎñ·ºĞÍÖµ
+		// Supplier æ¥å£è¿”å›ä»»åŠ¡æ³›å‹å€¼
 		Supplier<Person> personsupplier = Person::new;
 		Person person = personsupplier.get();
 		System.out.println(person.getFirstName());
 
-		// Consumer½Ó¿Ú±íÊ¾Ö´ĞĞÔÚµ¥¸ö²ÎÊıÉÏµÄ²Ù×÷¡£
+		// Consumeræ¥å£è¡¨ç¤ºæ‰§è¡Œåœ¨å•ä¸ªå‚æ•°ä¸Šçš„æ“ä½œã€‚
 		Consumer<Person> greeter = (value) -> System.out.println("hello" + value.getFirstName());
-		greeter.accept(new Person("ÕÅÈı", "ÀîËÄ"));
+		greeter.accept(new Person("å¼ ä¸‰", "æå››"));
 
-		// Comparator½Ó¿Ú
+		// Comparatoræ¥å£
 		Comparator<Person> comparator = (p1, p2) -> p1.getFirstName().compareTo(p2.getFirstName());
 		Person p1 = new Person("ali", "jack");
 		Person p2 = new Person("tencent", "pony");
 		System.out.println(comparator.compare(p1, p2));
 		System.out.println(comparator.reversed().compare(p1, p2));
 
-		// Optional½Ó¿Ú
+		// Optionalæ¥å£
 		Optional<String> optional = Optional.ofNullable("111");
 		System.out.println(optional.isPresent());
 		System.out.println(optional.orElse("fallback"));
-		if(optional.isPresent()){
+		if (optional.isPresent()) {
 			System.out.println(optional.get());
 		}
 	}

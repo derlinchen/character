@@ -5,7 +5,7 @@ import character.part03.inter.Converter;
 public class FunctionDemo {
 
 	public static void main(String[] args) {
-		// lambda表达式为对抽象方法的实现
+		// lambda琛ㄨ揪寮忎负瀵规娊璞℃柟娉曠殑瀹炵幇
 		Converter<String, Integer> conv = (from)->Integer.valueOf(from);
 		Integer converted = conv.convert("12");
 		System.out.println(converted);

@@ -9,32 +9,32 @@ import java.util.stream.Collectors;
 public class StreamDemo {
 
 	public static void main(String[] args) {
-		// streamµÄÓÃ·¨±ØĞëÎªÒ»¸öÁĞ±í
+		// streamçš„ç”¨æ³•å¿…é¡»ä¸ºä¸€ä¸ªåˆ—è¡¨
 		List<String> strings = Arrays.asList("11","22","33","44");
-		// forEachÓÃ·¨
+		// forEachç”¨æ³•
 		strings.stream().forEach(System.out::println);
 		
-		// mapµÄÓÃ·¨
+		// mapçš„ç”¨æ³•
 		List<Integer> nums = Arrays.asList(1,2,3,4);
 		List<Integer> mapnums = nums.stream().map(i->i*i).distinct().collect(Collectors.toList());
 		for (Integer integer : mapnums) {
 			System.out.println(integer);
 		}
 		
-		// filterµÄÓÃ·¨
+		// filterçš„ç”¨æ³•
 		List<String> filterstrings = Arrays.asList("AA","","BB","CC");
 		System.out.println(filterstrings.stream().filter(string->!string.isEmpty()).count());
 		
-		// limitµÄÓÃ·¨
+		// limitçš„ç”¨æ³•
 		nums.stream().limit(2).forEach(System.out::println);
 		
-		// sortµÄÓÃ·¨
+		// sortçš„ç”¨æ³•
 		nums.stream().sorted().forEach(System.out::println);
 		
-		// Á÷µÄ²¢ĞĞ´¦Àí
+		// æµçš„å¹¶è¡Œå¤„ç†
 		System.out.println(filterstrings.parallelStream().filter(string->string.isEmpty()).count());
 		
-		// Êı¾İÍ³¼Æ
+		// æ•°æ®ç»Ÿè®¡
 		IntSummaryStatistics stat = nums.stream().mapToInt(x->x).summaryStatistics();
 		System.out.println(stat.getMax());
 		System.out.println(stat.getMin());
@@ -42,11 +42,11 @@ public class StreamDemo {
 		System.out.println(stat.getAverage());
 		System.out.println(nums.stream().count());
 		
-		// mathµÄÓÃ·¨
+		// mathçš„ç”¨æ³•
 		boolean ismath = strings.stream().anyMatch((s)->s.startsWith("11"));
 		System.out.println(ismath);
 		
-		// reduceÓÃ·¨
+		// reduceç”¨æ³•
 		Optional<String> red = strings.stream().reduce((s1, s2)->s1 + "#" +s2);
 		red.ifPresent(System.out::println);
 	}
